@@ -1,5 +1,6 @@
 from tkinter import *
 import settings
+from cell import Cell
 
 root = Tk()
 # Settings
@@ -37,6 +38,14 @@ body_frame.place(
     x=settings.ContainerWidthByPct(30),
     y=settings.ContainerHeightByPct(25)
 )
+
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
+        c = Cell()
+        c.create_btn_object(body_frame)
+        c.cell_btn_object.grid(
+            column=x, row=y
+        )
 
 # Run loop
 root.mainloop()
