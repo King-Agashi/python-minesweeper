@@ -43,11 +43,16 @@ body_frame.place(
 # Grid
 for x in range(settings.GRID_SIZE):
     for y in range(settings.GRID_SIZE):
-        c = Cell()
+        c = Cell(x, y)
         c.create_btn_object(body_frame)
         c.cell_btn_object.grid(
             column=x, row=y
         )
+
+Cell.create_cell_count_label(score_frame)
+Cell.cell_count_label_object.place(
+    x=0, y=0
+)
 
 Cell.randomize_mines()  # Assign mine cells
 
