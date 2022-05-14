@@ -58,6 +58,12 @@ class Cell:
                 counter += 1
         return counter
 
+    def show_cell(self):
+        self.cell_btn_object.configure(text=self.surrounded_cells_mines_length)
+
+    def show_mine(self):  # Mine Clicked!
+        self.cell_btn_object.configure(bg='red')
+
     def right_click_actions(self, event):
         print(event)
         print("Right Click")
