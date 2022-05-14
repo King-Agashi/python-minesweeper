@@ -9,6 +9,7 @@ root.geometry(f'{settings.WIDTH}x{settings.HEIGHT}')
 root.title("Minesweeper")
 root.resizable(False, False)
 
+# Containers
 title_frame = Frame(
     root,
     bg='black',
@@ -39,6 +40,7 @@ body_frame.place(
     y=settings.ContainerHeightByPct(25)
 )
 
+# Grid
 for x in range(settings.GRID_SIZE):
     for y in range(settings.GRID_SIZE):
         c = Cell()
@@ -46,6 +48,8 @@ for x in range(settings.GRID_SIZE):
         c.cell_btn_object.grid(
             column=x, row=y
         )
+
+Cell.randomize_mines()  # Assign mine cells
 
 # Run loop
 root.mainloop()
