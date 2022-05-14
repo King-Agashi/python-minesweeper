@@ -50,6 +50,14 @@ class Cell:
         cells = [cell for cell in cells if cell is not None]
         return cells
 
+    @property
+    def surrounded_cells_mines_length(self):
+        counter = 0
+        for cell in self.surrounded_cells:
+            if cell.is_mine:
+                counter += 1
+        return counter
+
     def right_click_actions(self, event):
         print(event)
         print("Right Click")
